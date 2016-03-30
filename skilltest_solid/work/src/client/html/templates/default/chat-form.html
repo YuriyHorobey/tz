@@ -1,0 +1,9 @@
+<form class="chat__form" action="/add" method="post">
+    <input type="text" name="name" class="chat__form--name"
+           ng-model="name"/>
+    <input type="text" name="text" class="chat__form--text"
+           ng-model="text"/>
+    <button type="button" class="chat__form--submit"
+            ng-click="send()">Send
+    </button>
+</form>

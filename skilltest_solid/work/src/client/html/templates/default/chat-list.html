@@ -1,0 +1,13 @@
+Messages
+<ul class="chat__list">
+    <li class="chat__list--item"
+        ng-repeat="message in messages">
+        <div ng-bind="message.getUser()"></div>
+        <div ng-bind="message.getText()"></div>
+    </li>
+</ul>
+<div ng-if="!messages">
+    Chat is currently empty.<br>
+    Say something..
+</div>
+

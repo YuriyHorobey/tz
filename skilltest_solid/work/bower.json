@@ -1,0 +1,28 @@
+{
+  "name": "skilltest_solid",
+  "description": "JavaScript skills test",
+  "main": "none",
+  "authors": [
+    "Yuriy Horobey"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "N/A"
+  ],
+  "homepage": "https://github.com/YuriyHorobey/skilltest_solid",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": "./vendor/"
+  },
+  "dependencies": {
+    "angular": "~1.4.9"
+  }
+}

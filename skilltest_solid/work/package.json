@@ -1,0 +1,38 @@
+{
+  "name": "skilltest_solid",
+  "version": "1.0.0",
+  "description": "JavaScript Skills test",
+  "main": "none",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriyHorobey/skilltest_solid.git"
+  },
+  "keywords": [
+    "N/A"
+  ],
+  "author": "Yuriy Horobey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuriyHorobey/skilltest_solid/issues"
+  },
+  "homepage": "https://github.com/YuriyHorobey/skilltest_solid#readme",
+  "devDependencies": {
+    "bower": "^1.7.2",
+    "bower-installer": "^1.2.0",
+    "fs-extra": "^0.26.4",
+    "gulp": "^3.9.0",
+    "gulp-markdown": "^1.2.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-util": "^3.0.7",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "mongodb": "^2.1.4",
+    "yargs": "^3.32.0"
+  }
+}

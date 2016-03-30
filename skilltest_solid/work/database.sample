@@ -1,0 +1,3 @@
+use db;
+db.db.remove({});
+db.db.insert({"user":"root", "text":"Hello cruel World!", timestamp:Date.now()});

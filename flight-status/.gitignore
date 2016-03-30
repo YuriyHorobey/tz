@@ -1,5 +1,9 @@
 logs/*
 !.gitkeep
+*.map
+log
+*.log
+*.js
 node_modules/
 bower_components/
 tmp

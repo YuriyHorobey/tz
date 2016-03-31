@@ -1,5 +1,14 @@
-<form class="form form_search">
-
+<form class="form form_search" #f="ngForm"
+      (ngSubmit)="onSubmit(f.value)"
+>
+    <label for="number">#</label>
+    <input type="number" ngControl="number" length="4" name="number" #number="ngForm"/>
+    <div [hidden]="number.valid || number.pristine" class="alert alert-danger">
+        Invalid flight number
+    </div>
+    <label for="code">airport code:</label>
+    <input type="text" ngControl="code"/>
+    <input type="submit" value="filter">
 </form>
 <h2>Results</h2>
 <div *ngIf="flights.length == 0" class="alert alert_empty-search">
@@ -17,7 +26,9 @@
         <tr *ngFor="#flight of flights" class="results-table__data-row">
             <td class="results-table__data-cell results-table__data-cell_number">{{flight.number}}</td>
             <td class="results-table__data-cell results-table__data-cell_date">{{flight.date}}</td>
-            <td class="results-table__data-cell results-table__data-cell_status {{getStatusCSS(flight)}}" >{{flight.status}}</td>
+            <td class="results-table__data-cell results-table__data-cell_status {{getStatusCSS(flight)}}">
+                {{flight.status}}
+            </td>
             <td class="results-table__data-cell results-table__data-cell_code-from">{{flight.codeFrom}}</td>
             <td class="results-table__data-cell results-table__data-cell_name-from">{{flight.nameFrom}}</td>
             <td class="results-table__data-cell results-table__data-cell_code-to">{{flight.codeTo}}</td>

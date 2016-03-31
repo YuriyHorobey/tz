@@ -17,6 +17,34 @@ export class DataProviderService {
         return this._fakedData;
     }
 
+    public getDataFiltered(code:string, num?:number) {
+        var ret = [];
+        code = code ? ('' + code).toUpperCase() : false;
+        for (var i = 0; i < this._fakedData.length; i++) {
+            var flight = this._fakedData[i];
+            if (
+
+                (
+                    !code
+                    ||
+                    flight.codeFrom.substr(0, code.length).toUpperCase() == code
+                    ||
+                    flight.codeTo.substr(0, code.length).toUpperCase() == code
+                )
+                &&
+                (
+                    !num
+                    ||
+                    num == flight.number
+                )
+            ) {
+                ret.push(flight);
+            }
+        }
+
+        return ret;
+    }
+
     //Private!
     //fields. Private!
 
@@ -4311,21 +4339,23 @@ export class DataProviderService {
             {date: '', codeFrom: 'UGU', nameFrom: 'Zugapa, Indonesia ', codeTo: '__TO__', nameTo: '__NAME__'},
             {date: '', codeFrom: 'ZRH', nameFrom: 'Zurich, Switzerland ', codeTo: '__TO__', nameTo: '__NAME__'}
         ];
+        var tst = 0;
         for (var i = 0; i < data.length; i++) {
             var d = data[i];
 
             //fake destination taking random 'other' airport
             var i2 = i;
             while (i2 == i) {
-                i2 = Math.round(Math.random(data.lenght));
+                i2 = Math.round(Math.random() * (data.length - 1));
+                tst++;
             }
             var d2 = data[i2];
             d.nameTo = d2.nameFrom;
             d.codeTo = d2.codeFrom;
 
-            //fake and format date -365 days from now
+            //fake and format date +-183 days from now
             var now = new Date();
-            now.setDate(now.getDate() - Math.random() * 365);
+            now.setDate(now.getDate() - 183 + Math.random() * 365);
 
             var month = now.getMonth();
             month++;
@@ -4342,7 +4372,12 @@ export class DataProviderService {
             //fake flight number
             d.number = '' + Math.round(Math.random() * 9) + Math.round(Math.random() * 9) + Math.round(Math.random() * 9) + Math.round(Math.random() * 9);
         }
-
+        var ret = data.sort(function (e1, e2) {
+            if (e1.date > e2.date) return 1;
+            if (e1.date < e2.date) return -1;
+            return 0;
+        });
+        console.log(tst, tst - data.length);
         return data;
     }
 

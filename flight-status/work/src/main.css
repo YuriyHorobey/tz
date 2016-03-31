@@ -10,11 +10,13 @@
 }
 
 .results-table__header-row {
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .results-table__header-cell {
     background-color: lightblue;
-    padding: 0.2em;
+    padding: 0.8em 0.5em;
 }
 
 .results-table__header-cell_date {
@@ -50,6 +52,7 @@
 }
 
 .results-table__data-cell_date {
+    min-width: 5em;
 }
 
 .results-table__data-cell_status {
@@ -59,7 +62,7 @@
     background-color: #77A;
 }
 
-.results-table__data-cell_status-on-time {
+.results-table__data-cell_status-on_time {
     background-color: rgba(86, 255, 69, 0.2);
 }
 
@@ -88,9 +91,12 @@
 }
 
 .alert {
+    text-align: center;
+    padding: 1em;
 }
 
 .alert_empty-search {
     border: 1px solid #a77;
     border-radius: 0.5em;
+    color: #a77;
 }

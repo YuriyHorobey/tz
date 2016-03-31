@@ -1,13 +1,12 @@
-<form class="form form_search" #f="ngForm"
-      (ngSubmit)="onSubmit(f.value)"
->
+<h2>Flight search</h2>
+<form class="form form_search" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
     <label for="number">#</label>
     <input type="number" ngControl="number" length="4" name="number" #number="ngForm"/>
     <div [hidden]="number.valid || number.pristine" class="alert alert-danger">
         Invalid flight number
     </div>
     <label for="code">airport code:</label>
-    <input type="text" ngControl="code"/>
+    <input type="text" ngControl="code" length="3"/>
     <input type="submit" value="filter">
 </form>
 <h2>Results</h2>
@@ -17,11 +16,36 @@
 <div *ngIf="flights.length > 0">found: {{flights.length}}
     <table class="results-table">
         <tr class="results-table__header-row">
-            <th class="results-table__header-cell results-table__header-cell_number">#</th>
-            <th class="results-table__header-cell results-table__header-cell_date">Date</th>
-            <th class="results-table__header-cell results-table__header-cell_status">Status</th>
-            <th class="results-table__header-cell results-table__header-cell_from" colspan="2">From</th>
-            <th class="results-table__header-cell results-table__header-cell_to" colspan="2">To</th>
+            <th class="results-table__header-cell results-table__header-cell_number">#
+                <button class="button sort-button sort-button_up {{isButtonActiveCSS('number','up')}}"
+                        (click)="onSortBy('number','up')"></button>
+                <button class="button sort-button sort-button_down {{isButtonActiveCSS('number','down')}}"
+                        (click)="onSortBy('number','down')"></button>
+            </th>
+            <th class="results-table__header-cell results-table__header-cell_date">Date
+                <button class="button sort-button sort-button_up {{isButtonActiveCSS('date','up')}}"
+                        (click)="onSortBy('date','up')"></button>
+                <button class="button sort-button sort-button_down {{isButtonActiveCSS('date','down')}}"
+                        (click)="onSortBy('date','down')"></button>
+            </th>
+            <th class="results-table__header-cell results-table__header-cell_status">Status
+                <button class="button sort-button sort-button_up {{isButtonActiveCSS('status','up')}}"
+                        (click)="onSortBy('status','up')"></button>
+                <button class="button sort-button sort-button_down {{isButtonActiveCSS('status','down')}}"
+                        (click)="onSortBy('status','down')"></button>
+            </th>
+            <th class="results-table__header-cell results-table__header-cell_from" colspan="2">From
+                <button class="button sort-button sort-button_up {{isButtonActiveCSS('codeFrom','up')}}"
+                        (click)="onSortBy('codeFrom','up')"></button>
+                <button class="button sort-button sort-button_down {{isButtonActiveCSS('codeFrom','down')}}"
+                        (click)="onSortBy('codeFrom','down')"></button>
+            </th>
+            <th class="results-table__header-cell results-table__header-cell_to" colspan="2">To
+                <button class="button sort-button sort-button_up {{isButtonActiveCSS('codeTo','up')}}"
+                        (click)="onSortBy('codeTo','up')"></button>
+                <button class="button sort-button sort-button_down {{isButtonActiveCSS('codeTo','down')}}"
+                        (click)="onSortBy('codeTo','down')"></button>
+            </th>
         </tr>
         <tr *ngFor="#flight of flights" class="results-table__data-row">
             <td class="results-table__data-cell results-table__data-cell_number">{{flight.number}}</td>

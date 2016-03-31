@@ -1,0 +1,109 @@
+<html>
+<head><title>OpenLayers Marker Popups</title></head>
+<body>
+<div id="map"></div>
+<div id="timeline"></div>
+<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+<script src="js/data-provider.js"></script>
+<script src="js/feature-collection.js"></script>
+<script src="js/feature.js"></script>
+<script src="js/map.js"></script>
+<script src="js/timeline.js"></script>
+<script src="js/app.js"></script>
+<script>
+    var config = {
+        'map-id': 'map',
+        'timeline-id': 'timeline',
+        'zoom': 3,
+        'latitude': 132.01,
+        'longitude': -32.01
+    };
+    var app = new App(config);
+    app.run();
+
+
+    /*
+     map = new OpenLayers.Map("mapdiv");
+     map.addLayer(new OpenLayers.Layer.OSM());
+
+     epsg4326 = new OpenLayers.Projection("EPSG:4326"); //WGS 1984 projection
+     projectTo = map.getProjectionObject(); //The map projection (Spherical Mercator)
+
+     //var lonLat = new OpenLayers.LonLat( -0.1279688 ,51.5077286 ).transform(epsg4326, projectTo);
+     //var lonLat = new OpenLayers.LonLat( 130.72,32.78 ).transform(epsg4326, projectTo);
+     var lonLat = new OpenLayers.LonLat(131.51, 32).transform(epsg4326, projectTo);
+
+
+     var zoom = 3;
+     map.setCenter(lonLat, zoom);
+
+     var vectorLayer = new OpenLayers.Layer.Vector("Overlay");
+
+     var data = [
+     [-79.9398, 0.3715, 19.16],
+     [130.8463, 32.8805, 10],
+     [130.7259, 32.782, 10],
+     [166.3518, -14.5225, 16],
+     [130.732, 32.6934, 5.96],
+     [130.6345, 32.8494, 10],
+     [94.8995, 23.1329, 134.76],
+     [71.1357, 36.4709, 211.59],
+     [166.5711, -13.9942, 26.79],
+     [166.5981, -14.0821, 24],
+     [166.8205, -14.3519, 35],
+     [-97.575, 35.9951, 4.94]
+     ];
+
+     // Define markers as "features" of the vector layer:
+     var feature;
+     for (var i = 0; i < data.length; i++) {
+     var el = data[i];
+     feature = new OpenLayers.Feature.Vector(
+     new OpenLayers.Geometry.Point(el[0], el[1]).transform(epsg4326, projectTo),
+     {description: 'This is the value of<br>the description attribute'},
+     {
+     externalGraphic: 'img/marker.png',
+     graphicHeight: 25,
+     graphicWidth: 21,
+     graphicXOffset: -12,
+     graphicYOffset: -25
+     }
+     );
+     vectorLayer.addFeatures(feature);
+     }
+
+     map.addLayer(vectorLayer);
+
+
+     //Add a selector control to the vectorLayer with popup functions
+     var controls = {
+     selector: new OpenLayers.Control.SelectFeature(vectorLayer, {onSelect: createPopup, onUnselect: destroyPopup})
+     };
+
+     function createPopup(feature) {
+     feature.popup = new OpenLayers.Popup.FramedCloud("pop",
+     feature.geometry.getBounds().getCenterLonLat(),
+     null,
+     '<div class="markerContent">' + feature.attributes.description + '</div>',
+     null,
+     true,
+     function () {
+     controls['selector'].unselectAll();
+     }
+     );
+     //feature.popup.closeOnMove = true;
+     map.addPopup(feature.popup);
+     }
+
+     function destroyPopup(feature) {
+     feature.popup.destroy();
+     feature.popup = null;
+     }
+
+     map.addControl(controls['selector']);
+     controls['selector'].activate();
+     */
+</script>
+
+</body>
+</html>

@@ -1,8 +1,30 @@
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
 
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/*common controls*/
 .form {
 }
 
+.button {
+    cursor: pointer;
+    outline: none;
+}
+
+/*app specific*/
+.app-container {
+    margin: auto;
+    padding: 2em;
+}
+
 .form_search {
+    margin-bottom: 2em;
 }
 
 /* Results Table*/
@@ -52,7 +74,7 @@
 }
 
 .results-table__data-cell_date {
-    min-width: 5em;
+    min-width: 10em;
 }
 
 .results-table__data-cell_status {
@@ -88,6 +110,44 @@
 }
 
 .results-table__data-cell_name-to {
+}
+
+/*Sort buttons*/
+.sort-button {
+    width: 9px;
+    height: 9px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    border: none;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+.sort-button_up {
+    background-image: url("assets/img/arrows.png");
+    background-position: 0 0;
+}
+
+.sort-button_up.active, .sort-button_up:hover {
+    background-position: 0 -17px;
+}
+
+.sort-button_down {
+    background-image: url("assets/img/arrows.png");
+    background-position: 0 -9px;
+}
+
+.sort-button_down.active, .sort-button_down:hover {
+
+    background-position: 0 -26px;
+}
+
+.results-table .sort-button {
+    float: right;
+}
+
+.results-table .sort-button_down {
+    clear: both;
 }
 
 .alert {

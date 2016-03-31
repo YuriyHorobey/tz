@@ -1,1 +1,96 @@
 
+.form {
+}
+
+.form_search {
+}
+
+/* Results Table*/
+.results-table {
+}
+
+.results-table__header-row {
+}
+
+.results-table__header-cell {
+    background-color: lightblue;
+    padding: 0.2em;
+}
+
+.results-table__header-cell_date {
+}
+
+.results-table__header-cell_status {
+}
+
+.results-table__header-cell_from {
+}
+
+.results-table__header-cell_to {
+}
+
+.results-table__data-row {
+
+}
+
+.results-table__data-row:nth-child(even) {
+    background-color: #eee;
+}
+
+.results-table__data-row:nth-child(odd) {
+    background-color: #eef;
+}
+
+.results-table__data-cell {
+    padding: 0.5em;
+}
+
+.results-table__data-cell_number {
+    font-weight: bold;
+}
+
+.results-table__data-cell_date {
+}
+
+.results-table__data-cell_status {
+}
+
+.results-table__data-cell_status-departed {
+    background-color: #77A;
+}
+
+.results-table__data-cell_status-on-time {
+    background-color: rgba(86, 255, 69, 0.2);
+}
+
+.results-table__data-cell_status-canceled {
+    background-color: #da751d;
+}
+
+.results-table__data-cell_status-scheduled {
+
+}
+
+.results-table__data-cell_status-arrived {
+    background-color: rgba(86, 255, 69, 0.61);
+}
+
+.results-table__data-cell_code-from {
+}
+
+.results-table__data-cell_name-from {
+}
+
+.results-table__data-cell_code-to {
+}
+
+.results-table__data-cell_name-to {
+}
+
+.alert {
+}
+
+.alert_empty-search {
+    border: 1px solid #a77;
+    border-radius: 0.5em;
+}

@@ -1,1 +1,27 @@
-search form here
+<form class="form form_search">
+
+</form>
+<h2>Results</h2>
+<div *ngIf="flights.length == 0" class="alert alert_empty-search">
+    Nothing found.
+</div>
+<div *ngIf="flights.length > 0">found: {{flights.length}}
+    <table class="results-table">
+        <tr class="results-table__header-row">
+            <th class="results-table__header-cell results-table__header-cell_number">#</th>
+            <th class="results-table__header-cell results-table__header-cell_date">Date</th>
+            <th class="results-table__header-cell results-table__header-cell_status">Status</th>
+            <th class="results-table__header-cell results-table__header-cell_from" colspan="2">From</th>
+            <th class="results-table__header-cell results-table__header-cell_to" colspan="2">To</th>
+        </tr>
+        <tr *ngFor="#flight of flights" class="results-table__data-row">
+            <td class="results-table__data-cell results-table__data-cell_number">{{flight.number}}</td>
+            <td class="results-table__data-cell results-table__data-cell_date">{{flight.date}}</td>
+            <td class="results-table__data-cell results-table__data-cell_status {{getStatusCSS(flight)}}" >{{flight.status}}</td>
+            <td class="results-table__data-cell results-table__data-cell_code-from">{{flight.codeFrom}}</td>
+            <td class="results-table__data-cell results-table__data-cell_name-from">{{flight.nameFrom}}</td>
+            <td class="results-table__data-cell results-table__data-cell_code-to">{{flight.codeTo}}</td>
+            <td class="results-table__data-cell results-table__data-cell_name-to">{{flight.nameTo}}</td>
+        </tr>
+    </table>
+</div>

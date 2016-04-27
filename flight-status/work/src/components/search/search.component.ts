@@ -42,7 +42,11 @@ export class SearchComponent {
         var ret =
             ('' + button ).trim() == this._sort.field
             &&
+<<<<<<< HEAD
             ('' + direction ).toLowerCase().trim() == this._sort.direction
+=======
+            ('' + direction ).toLowerCase().trim == this._sort.direction
+>>>>>>> 0b8a4f74d1040ce8493325411108f164e2aae72f
                 ? 'active' : '';
         return ret;
     }
